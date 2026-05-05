@@ -46,7 +46,7 @@ const checkpremiun = (item) => {
     }
 }
 
-const updatedProducts = products.map(item => checkpremiun(item))
+const updatedProducts = products.map(checkpremiun)
 console.log(updatedProducts);
 
 /************************************************************************************************************************************** */
