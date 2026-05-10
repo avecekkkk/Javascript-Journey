@@ -8,13 +8,7 @@ Hint: Check if the fruit exists in your accumulator; if it does, increment it; i
 const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
 
 const tallying = (acc,curr) => {
-    if(acc[curr]){  //acc  is object / [curr] set as key for object which means object.apple = 1
-        acc[curr] += 1;
-
-    }else {
-        acc[curr] = 1;
-    }
-
+    acc[curr] = (acc[curr] || 0) + 1;
     return acc
 }
 
@@ -41,12 +35,7 @@ const items = [
 const prices = (acc,curr) => {
     const category = curr.price >=50 ? 'Expensive' : 'Cheap';
 
-    if(acc[category]){
-        acc[category] = acc[category] + 1;
-    }else {
-        acc[category] = 1
-    }
-
+    acc[category] = (acc[category] || 0) + 1;
     return acc
 }
 
@@ -67,11 +56,7 @@ const guests = [
 
 const responses = (acc,curr) => {
     const guestStatus = curr.status;
-    if(!acc[guestStatus]){
-        acc[guestStatus] = 0;
-    }
-
-    acc[guestStatus] ++
+    acc[guestStatus] = (acc[guestStatus] || 0) + 1
 
     return acc;
 }
@@ -94,10 +79,7 @@ const inventory = [
 
 const CategorySum = (acc,curr) => {
     const types = curr.type;
-    if(!acc[types]){
-        acc[types] = 0;
-    }
-        acc[types] += curr.stock;
+    acc[types] = (acc[types] || 0) + 1
 
     return acc
 }
@@ -121,9 +103,11 @@ const players = [
 
 const teams = (acc,curr) =>{
     const team = curr.team
-    if(!acc[team]){
-        acc[team] = []
-    }
+    // if(!acc[team]){
+    //     acc[team] = []
+    // }
+    // acc[team].push(curr.name);
+    acc[team] = (acc[team] || [])
     acc[team].push(curr.name);
     return acc;
 }
@@ -171,8 +155,8 @@ const flights = [
 ];
 
 const flightDetail = (acc,curr) => {
-    acc.totalpassengers = (acc.totalpassengers ?? 0 ) +  curr.passengers
-    acc.totalFlight = (acc.totalFlight ?? 0)
+    acc.totalpassengers = (acc.totalpassengers || 0 ) +  curr.passengers
+    acc.totalFlight = (acc.totalFlight || 0)
     if(curr.flightNum){
         acc.totalFlight += 1;
     }
