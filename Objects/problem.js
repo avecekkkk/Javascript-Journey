@@ -44,12 +44,11 @@ for(let key in tea){
 const myTeas = {
     greentea: {
         name: "Green Tea",
-        caffeine: "low"
-
+        caffeine: "low",
     },
     blacktea : {
         name: 'Black tea',
-        caffeine: "medium"
+        caffeine: "medium",
     }
 }
 
