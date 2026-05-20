@@ -58,6 +58,14 @@ console.log(isNumthere);
 //     }
 // }
 
+const id = {
+    name: 'aveec',
+    roll: 4
+}
 
+if(id == Object(id)){
+    console.log(`This is an object`);
+    
+}
 
 
