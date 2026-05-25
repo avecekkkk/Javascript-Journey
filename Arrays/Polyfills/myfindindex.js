@@ -3,7 +3,7 @@ if(!Array.prototype.myfindindex){
         let value = -1;
         for(let i=0; i<this.length; i++){
             if(userFn(this[i])){
-                value = i
+                return value = i
             }
         }
 
@@ -11,8 +11,8 @@ if(!Array.prototype.myfindindex){
     }
 }
 
-const arrays = [5, 12, 8, 130, 44];
+const arrays = [5, 12, 8, 55, 130, 44];
 
-const isLargerNumber = arrays.myfindindex((element) => element > 500);
+const isLargerNumber = arrays.myfindindex((element) => element > 120);
 
 console.log(isLargerNumber);
