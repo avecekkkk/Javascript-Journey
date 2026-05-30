@@ -15,6 +15,7 @@ const obj2 = {
 }
 
 console.log(obj.isfullName());
+
 obj2.__proto__ = obj; //obj2 now hold the reference of obj properties
 console.log(obj2.isfullName()); // First it check it properties and then will check the __proto__ where obj2 will eventually be able to access the reference of obj that has in obj2 proto which inheritate from obj
 

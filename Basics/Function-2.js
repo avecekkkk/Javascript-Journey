@@ -13,6 +13,7 @@ console.log(totalchoco(4,6));
 
 const sum = totalchoco(2, 4)
 
+
 function totalbook(fiction, nonfiction){
     return `There is ${fiction} fiction and ${nonfiction} non-fuction book`;
 }
